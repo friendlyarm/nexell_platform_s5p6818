@@ -1,4 +1,3 @@
-ifeq ($(TARGET_ARCH),arm)
 ifeq ($(TARGET_CPU_VARIANT2),s5p6818)
 
 LOCAL_PATH := $(call my-dir)
@@ -12,7 +11,7 @@ LOCAL_SHARED_LIBRARIES :=	\
 
 LOCAL_C_INCLUDES += system/core/include/ion \
 					$(TOP)/hardware/samsung_slsi/slsiap/include \
-					$(TOP)/linux/platform/s5p6818/library/include
+					$(TOP)/vendor/nexell/s5p6818/library/include
 
 LOCAL_CFLAGS += 
 
@@ -33,5 +32,4 @@ LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_STATIC_LIBRARY)
 
-endif
 endif

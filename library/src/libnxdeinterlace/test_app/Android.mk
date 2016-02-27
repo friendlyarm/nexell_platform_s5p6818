@@ -1,3 +1,5 @@
+ifeq ($(TARGET_CPU_VARIANT2),s5p6818)
+
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -12,7 +14,7 @@ LOCAL_C_INCLUDES += \
 	system/core/include		\
 	hardware/libhardware/include	\
 	hardware/samsung_slsi/slsiap/include	\
-	linux/platform/$(TARGET_CPU_VARIANT2)/library/include	\
+	vendor/nexell/$(TARGET_CPU_VARIANT2)/library/include	\
 	system/core/include/ion	\
 	$(LOCAL_PATH)
 
@@ -29,8 +31,10 @@ LOCAL_SHARED_LIBRARIES := \
 	libnx_deinterlace
 
 LOCAL_LDFLAGS += \
-	-Llinux/platform/$(TARGET_CPU_VARIANT2)/library/lib
+	-Lvendor/nexell/$(TARGET_CPU_VARIANT2)/library/lib
 
 LOCAL_MODULE:= deinterlace_tests
 
 include $(BUILD_EXECUTABLE)
+
+endif

@@ -1,10 +1,12 @@
+ifeq ($(TARGET_CPU_VARIANT2),s5p6818)
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 # LOCAL_PRELINK_MODULE := false
 
 SLSIAP_INCLUDE := $(TOP)/hardware/samsung_slsi/slsiap/include
-LINUX_INCLUDE  := $(TOP)/linux/platform/$(TARGET_CPU_VARIANT2)/library/include
+LINUX_INCLUDE  := $(TOP)/vendor/nexell/$(TARGET_CPU_VARIANT2)/library/include
 
 LOCAL_SHARED_LIBRARIES :=
 
@@ -37,3 +39,5 @@ LOCAL_MODULE := libnx_deinterlace
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
