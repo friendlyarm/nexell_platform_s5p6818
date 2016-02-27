@@ -1,0 +1,4 @@
+*test
+*backup
+*.o
+*.depend
